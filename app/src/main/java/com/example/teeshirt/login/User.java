@@ -86,7 +86,7 @@ public class User extends ActionBarActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent i = new Intent("com.example.teeshirt.login.WebView"); //User.this, WebView.class
+                        Intent i = new Intent("com.example.teeshirt.login.Web"); //User.this, WebView.class
                         startActivity(i);
                     }
                 }
