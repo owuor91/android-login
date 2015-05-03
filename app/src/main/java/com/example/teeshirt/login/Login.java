@@ -4,36 +4,45 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Login extends ActionBarActivity {
+    private static EditText etUser, etPass;
+    private static TextView tvAttempts;
+    private static Button loginBtn;
+    int attempts_counter = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        loginBtnOnClick();
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_login, menu);
-        return true;
-    }
+    public void loginBtnOnClick(){
+        etUser = (EditText)findViewById(R.id.etUser);
+        etPass = (EditText)findViewById(R.id.etPass);
+        tvAttempts = (TextView)findViewById(R.id.tvAttempts);
+        loginBtn = (Button)findViewById(R.id.loginBtn);
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (etUser.getText().toString().equals("owuor91") && etPass.getText().toString().equals("password")){
+                    Toast.makeText(Login.this, "Correct username & password", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(Login.this, "Incorrect username or password", Toast.LENGTH_SHORT).show();
+                    attempts_counter-=1;
+                    tvAttempts.setText(Integer.toString(attempts_counter));
+                }
+            }
+        });
     }
 }

@@ -4,4 +4,11 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_user">User</string>
+    <string name="login">Login</string>
+    <string name="attempts">ATTEMPTS</string>
+    <string name="loginBtn">LOGIN</string>
+    <string name="pass">Password</string>
+    <string name="passHint">Enter Password</string>
+    <string name="user">Username</string>
+    <string name="userHint">Enter username</string>
 </resources>
