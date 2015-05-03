@@ -12,5 +12,17 @@
         android:id="@+id/listViewLV">
         
         </ListView>
+    
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listViewLV"
+        android:id="@+id/seekbar"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekbar"
+        android:id="@+id/tv"/>
 
 </RelativeLayout>

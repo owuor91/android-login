@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -15,11 +17,15 @@ public class User extends ActionBarActivity {
     private static ListView listViewLV;
     private static String[] NAMES = new String[] {"Tom", "Dick", "Larry", "Page", "Kendele","Amos"};
 
+    private static SeekBar seekbar;
+    private static TextView tv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
         showList();
+        seeking();
     }
 
     public void showList(){
@@ -36,6 +42,37 @@ public class User extends ActionBarActivity {
                 }
         );
 
+    }
+
+    public void seeking(){
+        seekbar = (SeekBar)findViewById(R.id.seekbar);
+        tv = (TextView)findViewById(R.id.tv);
+        tv.setText(seekbar.getProgress() + "/"+seekbar.getMax());
+
+        seekbar.setOnSeekBarChangeListener(
+
+                new SeekBar.OnSeekBarChangeListener() {
+                    int progressVal;
+
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        progressVal = progress;
+                        tv.setText(progressVal + "/"+seekbar.getMax());
+                        Toast.makeText(User.this, "Seekbar in Progress", Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                        Toast.makeText(User.this, "Seekbar in StartTracking", Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                        tv.setText(progressVal + "/"+seekbar.getMax());
+                        Toast.makeText(User.this, "Seekbar on StopTracking", Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
     }
 
 }
