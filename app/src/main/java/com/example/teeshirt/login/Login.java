@@ -32,10 +32,12 @@ public class Login extends ActionBarActivity {
         tvAttempts = (TextView)findViewById(R.id.tvAttempts);
         loginBtn = (Button)findViewById(R.id.loginBtn);
 
+        tvAttempts.setText(Integer.toString(attempts_counter));
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (etUser.getText().toString().equals("user") && etPass.getText().toString().equals("pass")){
+                if (etUser.getText().toString().trim().equals("user") && etPass.getText().toString().trim().equals("pass")){
                     Toast.makeText(Login.this, "Correct username & password", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent("com.example.teeshirt.login.User");
                     startActivity(intent);
