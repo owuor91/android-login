@@ -6,7 +6,23 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.teeshirt.login.WebView">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Open URL"
+        android:id="@+id/btn"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et"
+        android:layout_below="@+id/btn"
+        android:text="https://www.google.com"/>
+
+    <WebView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/et"
+        android:id="@+id/web"></WebView>
 
 </RelativeLayout>

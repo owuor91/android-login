@@ -29,6 +29,7 @@ public class User extends ActionBarActivity {
         setContentView(R.layout.activity_user);
         showList();
         seeking();
+        btnClick();
     }
 
     public void showList(){
@@ -85,7 +86,7 @@ public class User extends ActionBarActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent i = new Intent("com.example.teeshirt.login.WebView");
+                        Intent i = new Intent("com.example.teeshirt.login.WebView"); //User.this, WebView.class
                         startActivity(i);
                     }
                 }
