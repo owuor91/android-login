@@ -65,13 +65,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/attempts"
-                android:layout_weight="25"/>
+                android:layout_weight="25"
+                android:layout_marginRight="10dp"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvAttempts"
-                android:layout_weight="75"/>
+                android:layout_weight="70"/>
             </LinearLayout>
 
 

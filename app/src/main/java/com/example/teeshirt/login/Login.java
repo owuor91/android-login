@@ -40,6 +40,10 @@ public class Login extends ActionBarActivity {
                 else{
                     Toast.makeText(Login.this, "Incorrect username or password", Toast.LENGTH_SHORT).show();
                     attempts_counter-=1;
+                    if (attempts_counter==0){
+                        loginBtn.setEnabled(false);
+                    }
+
                     tvAttempts.setText(Integer.toString(attempts_counter));
                 }
             }
