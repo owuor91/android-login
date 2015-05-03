@@ -25,4 +25,11 @@
         android:layout_below="@+id/seekbar"
         android:id="@+id/tv"/>
 
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="NEXT"
+        android:id="@+id/btn"/>
+
 </RelativeLayout>

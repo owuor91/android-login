@@ -1,5 +1,6 @@
 package com.example.teeshirt.login;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -20,6 +22,7 @@ public class User extends ActionBarActivity {
     private static SeekBar seekbar;
     private static TextView tv;
 
+    private Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,4 +78,17 @@ public class User extends ActionBarActivity {
         );
     }
 
+
+    public void btnClick(){
+        btn = (Button)findViewById(R.id.btn);
+        btn.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent("com.example.teeshirt.login.WebView");
+                        startActivity(i);
+                    }
+                }
+        );
+    }
 }

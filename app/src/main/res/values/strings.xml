@@ -11,4 +11,5 @@
     <string name="passHint">Enter Password</string>
     <string name="user">Username</string>
     <string name="userHint">Enter username</string>
+    <string name="title_activity_web_view">WebView</string>
 </resources>
