@@ -1,5 +1,6 @@
 package com.example.teeshirt.login;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -34,8 +35,10 @@ public class Login extends ActionBarActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (etUser.getText().toString().equals("owuor91") && etPass.getText().toString().equals("password")){
+                if (etUser.getText().toString().equals("user") && etPass.getText().toString().equals("pass")){
                     Toast.makeText(Login.this, "Correct username & password", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent("com.example.teeshirt.login.User");
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(Login.this, "Incorrect username or password", Toast.LENGTH_SHORT).show();
